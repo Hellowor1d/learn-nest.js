@@ -1,7 +1,13 @@
-import { Controller, Get, Req } from '@nestjs/common';
+import { Controller, Get, Req, Post} from '@nestjs/common';
+import { create } from 'domain';
 
 @Controller('cats')
 export class CatsController {
+
+    @Post()
+    create(){
+        return `This action add a new cat`
+    }
 
     // @Get() 装饰器，把路由接收到的特定请求(GET : '/cats')指向此处理器
     @Get()
