@@ -4,6 +4,8 @@ import { create } from 'domain';
 @Controller('cats')
 export class CatsController {
 
+    // @Put(), @Delete(), @Patch(), @Options(), @Head(), and @All()
+
     @Post()
     create(){
         return `This action add a new cat`
