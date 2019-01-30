@@ -1,5 +1,4 @@
-import { Controller, Get, Req, Post} from '@nestjs/common';
-import { create } from 'domain';
+import { Controller, Get, HttpCode, Post, Req } from '@nestjs/common';
 
 @Controller('cats')
 export class CatsController {
@@ -13,6 +12,7 @@ export class CatsController {
 
     // @Get() 装饰器，把路由接收到的特定请求(GET : '/cats')指向此处理器
     @Get()
+    @HttpCode(206)
     findAll(@Req() request){
         
         //返回字符串时，不会自动序列化为 json
