@@ -1,20 +1,20 @@
-import { Controller, Get, Post, Req } from '@nestjs/common';
-
+import { Body, Controller, Get, Post, Req, Query } from '@nestjs/common';
+import {CreateCatDto} from './create-cat.dto'
 @Controller('cats')
 export class CatsController {
 
     // @Put(), @Delete(), @Patch(), @Options(), @Head(), and @All()
 
     @Post()
-    create(){
-        return `This action add a new cat`
+    async create(@Body() createCatDto: CreateCatDto) {
+    return 'This action adds a new cat';
     }
 
     // @Get() 装饰器，把路由接收到的特定请求(GET : '/cats')指向此处理器
     @Get('ab*cd')
     // @HttpCode(206)
-    findAll(@Req() req){
-            console.log(req)
+    findAll(@Query() query){
+            console.log(query)
         //返回字符串时，不会自动序列化为 json
         return 'This is come from nest cats controller'
 
