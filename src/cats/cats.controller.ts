@@ -11,7 +11,7 @@ export class CatsController {
     }
 
     // @Get() 装饰器，把路由接收到的特定请求(GET : '/cats')指向此处理器
-    @Get()
+    @Get('ab*cd')
     // @HttpCode(206)
     findAll(@Req() req){
             console.log(req)
